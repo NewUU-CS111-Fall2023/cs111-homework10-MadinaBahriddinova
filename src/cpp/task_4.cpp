@@ -94,10 +94,3 @@ std::string multiplyNumbers(const std::string& input) {
     return tape;
 }
 
-int main() {
-    std::string input = "0111c11110";
-    std::string result = multiplyNumbers(input);
-    std::cout << result << std::endl;
-
-    return 0;
-}
