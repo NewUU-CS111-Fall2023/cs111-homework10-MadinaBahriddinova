@@ -68,6 +68,12 @@ int main() {
     int result = networkDelayTime(times, n, k);
     std::cout << result << std::endl;
 
+ //task7
+    std::vector<int> answers = {1, 1, 2};
+    int result = minRabbits(answers);
+    std::cout << result << std::endl;
+
+
  
 
     return 0;
