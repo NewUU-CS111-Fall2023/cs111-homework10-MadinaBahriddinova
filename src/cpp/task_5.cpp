@@ -22,17 +22,3 @@ bool hasZeroSumTriplet(const std::vector<int>& numbers) {
 
     return false;  
 }
-
-int main() {
-    std::vector<int> numbers = {-5, -17, 7, -4, 3, -2, 4};
-
-    bool result = hasZeroSumTriplet(numbers);
-
-    if (result) {
-        std::cout << "True" << std::endl;
-    } else {
-        std::cout << "False" << std::endl;
-    }
-
-    return 0;
-}
