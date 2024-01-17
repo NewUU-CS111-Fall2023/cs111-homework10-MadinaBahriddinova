@@ -3,56 +3,86 @@
  * Date:
  * Name:
  */
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
-def merge_nodes(head):
-    current = head
-    while current and current.next:
-        if current.val == 0 and current.next.val == 0:
-            
-            sum_val = 0
-            temp = current.next.next
-            while temp and temp.val != 0:
-                sum_val += temp.val
-                temp = temp.next
-            current.next = ListNode(sum_val, temp)
-        else:
-            current = current.next
+#include <iostream>
+#include <vector>
 
-def remove_zeros(head):
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+
+ListNode* mergeNodes(ListNode* start, ListNode* end) {
+    int sum = 0;
+    ListNode* current = start;
     
-    dummy = ListNode(0)
-    dummy.next = head
-    current = dummy
-    while current.next:
-        if current.next.val == 0:
-            current.next = current.next.next
-        else:
-            current = current.next
-    return dummy.next
+    while (current != end) {
+        sum += current->val;
+        ListNode* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    
+    return new ListNode(sum);
+}
 
-def display_linked_list(head):
-    result = []
-    while head:
-        result.append(head.val)
-        head = head.next
-    print(result)
+ListNode* mergeZeros(ListNode* head) {
+    ListNode* dummy = new ListNode(0);
+    dummy->next = head;
+    ListNode* current = dummy;
 
-input_list = [0, 3, 1, 0, 4, 5, 2, 0]
+    while (current->next) {
+        if (current->next->val == 0) {
+            ListNode* start = current->next;
+            while (current->next && current->next->val == 0) {
+                current = current->next;
+            }
+            ListNode* end = current->next;
 
+            ListNode* mergedNode = mergeNodes(start->next, end);
+            start->next = mergedNode;
+            current = start;
+        } else {
+            current = current->next;
+        }
+    }
 
-head = ListNode(input_list[0])
-current = head
-for val in input_list[1:]:
-    current.next = ListNode(val)
-    current = current.next
+    ListNode* newHead = dummy->next;
+    delete dummy;
+    return newHead;
+}
 
+void displayLinkedList(ListNode* head) {
+    while (head) {
+        std::cout << head->val << " ";
+        head = head->next;
+    }
+    std::cout << std::endl;
+}
 
-merge_nodes(head)
-head = remove_zeros(head)
+int main() {
+    
+    std::vector<int> input = {0, 3, 1, 0, 4, 5, 2, 0};
 
+    
+    ListNode* head = new ListNode(input[0]);
+    ListNode* current = head;
+    for (int i = 1; i < input.size(); ++i) {
+        current->next = new ListNode(input[i]);
+        current = current->next;
+    }
 
-display_linked_list(head)
+    
+    head = mergeZeros(head);
+
+    
+    displayLinkedList(head);
+    while (head) {
+        ListNode* temp = head;
+        head = head->next;
+        delete temp;
+    }
+
+    return 0;
+}
