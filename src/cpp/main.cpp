@@ -47,6 +47,11 @@ int main() {
     std::string result = compareNumbers(input);
     std::cout << result << std::endl;
 
+ //task4
+    std::string input = "0111c11110";
+    std::string result = multiplyNumbers(input);
+    std::cout << result << std::endl;
+
 
  
 
