@@ -42,6 +42,11 @@ int main() {
     std::string result = unaryAddition(input);
     std::cout << result << std::endl;
 
+ //task3
+    std::string input = "0111c11110";
+    std::string result = compareNumbers(input);
+    std::cout << result << std::endl;
+
 
  
 
