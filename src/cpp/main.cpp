@@ -17,7 +17,7 @@
 
 int main() {
     
-    //task1
+ //task1
     std::vector<int> input = {0, 3, 1, 0, 4, 5, 2, 0};
     ListNode* head = new ListNode(input[0]);
     ListNode* current = head;
@@ -36,6 +36,11 @@ int main() {
         head = head->next;
         delete temp;
     }
+    
+ //task2
+    std::string input = "11101111";
+    std::string result = unaryAddition(input);
+    std::cout << result << std::endl;
 
 
  
