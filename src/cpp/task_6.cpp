@@ -56,14 +56,4 @@ int networkDelayTime(const std::vector<std::vector<int>>& times, int n, int k) {
     return maxDistance;
 }
 
-int main() {
-  
-    std::vector<std::vector<int>> times = {{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
-    int n = 4;
-    int k = 2;
 
-    int result = networkDelayTime(times, n, k);
-    std::cout << result << std::endl;
-
-    return 0;
-}
