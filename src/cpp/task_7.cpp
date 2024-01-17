@@ -28,12 +28,4 @@ int minRabbits(const std::vector<int>& answers) {
     return totalRabbits;
 }
 
-int main() {
-    std::vector<int> answers = {1, 1, 2};
 
-    int result = minRabbits(answers);
-
-    std::cout << result << std::endl;
-
-    return 0;
-}
