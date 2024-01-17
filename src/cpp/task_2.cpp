@@ -48,12 +48,4 @@ std::string unaryAddition(const std::string& input) {
     return tape;
 }
 
-int main() {
-    std::string input = "11101111";
 
-    std::string result = unaryAddition(input);
-
-    std::cout << result << std::endl;
-
-    return 0;
-}
