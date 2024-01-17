@@ -31,18 +31,3 @@ bool isSatisfied(const std::vector<std::vector<int>>& formula, const std::unorde
 
     return true; // All clauses are satisfied
 }
-
-int main() {
-    std::vector<std::vector<int>> formula = {{1, -2}, {-1, 2, 3}};
-    std::unordered_map<char, bool> assignment = {{'A', true}, {'B', false}, {'C', true}};
-
-    bool result = isSatisfied(formula, assignment);
-
-    if (result) {
-        std::cout << "Satisfied" << std::endl;
-    } else {
-        std::cout << "Not Satisfied" << std::endl;
-    }
-
-    return 0;
-}
