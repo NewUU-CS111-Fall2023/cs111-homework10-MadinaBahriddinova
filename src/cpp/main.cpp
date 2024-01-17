@@ -73,6 +73,14 @@ int main() {
     int result = minRabbits(answers);
     std::cout << result << std::endl;
 
+ //task8
+    std::vector<int> nums1 = {1, 5, 11, 5};
+    std::vector<int> nums2 = {1, 2, 3, 5};
+    std::vector<int> nums3 = {12, 2, 31, 0, 5};
+    std::cout << std::boolalpha << canPartition(nums1) << std::endl; 
+    std::cout << std::boolalpha << canPartition(nums2) << std::endl;  
+    std::cout << std::boolalpha << canPartition(nums3) << std::endl;  
+
 
  
 
