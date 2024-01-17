@@ -81,6 +81,16 @@ int main() {
     std::cout << std::boolalpha << canPartition(nums2) << std::endl;  
     std::cout << std::boolalpha << canPartition(nums3) << std::endl;  
 
+ //task9
+    std::vector<std::vector<int>> formula = {{1, -2}, {-1, 2, 3}};
+    std::unordered_map<char, bool> assignment = {{'A', true}, {'B', false}, {'C', true}};
+    bool result = isSatisfied(formula, assignment);
+    if (result) {
+        std::cout << "Satisfied" << std::endl;
+    } else {
+        std::cout << "Not Satisfied" << std::endl;
+    }
+
 
  
 
