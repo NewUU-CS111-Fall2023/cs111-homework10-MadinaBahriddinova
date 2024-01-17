@@ -97,6 +97,17 @@ int main() {
     std::vector<std::vector<int>> formula = generate3SAT(variables, clauses);
     print3SAT(formula);
 
+ //task11
+    std::vector<std::vector<int>> cnfFormula1 = {{1, 2, -3}, {-1, -2, 3}, {2, -3}};
+    std::vector<std::vector<int>> cnfFormula2 = {{1, 2}, {-1, 3}, {-2, -3}};
+    std::vector<std::vector<int>> cnfFormula3 = {{1, 2, 3}, {-1, -2, 3}, {1, -3}};
+    std::vector<std::vector<int>> cnfFormula4 = {{1, 2}, {-1, -2}, {1, -2}};
+    std::cout << std::boolalpha << bruteForceSatisfiability(cnfFormula1) << std::endl;  // Output: true
+    std::cout << std::boolalpha << bruteForceSatisfiability(cnfFormula2) << std::endl;  // Output: true
+    std::cout << std::boolalpha << bruteForceSatisfiability(cnfFormula3) << std::endl;  // Output: true
+    std::cout << std::boolalpha << bruteForceSatisfiability(cnfFormula4) << std::endl;  // Output: false
+
+
 
  
 
