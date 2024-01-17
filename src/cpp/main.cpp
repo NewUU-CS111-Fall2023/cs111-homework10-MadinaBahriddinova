@@ -91,6 +91,12 @@ int main() {
         std::cout << "Not Satisfied" << std::endl;
     }
 
+ //task10
+    int variables = 3;
+    int clauses = 2;
+    std::vector<std::vector<int>> formula = generate3SAT(variables, clauses);
+    print3SAT(formula);
+
 
  
 
